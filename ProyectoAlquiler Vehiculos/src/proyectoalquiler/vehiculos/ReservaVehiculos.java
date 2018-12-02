@@ -13,11 +13,13 @@ public abstract class ReservaVehiculos {
     protected String nombre;
     protected String direccion;
     protected String direccionfin;
-    
-    public ReservaVehiculos(String nombre, String direccion, String drireccionfin) {
+    protected double km;
+
+    public ReservaVehiculos(String nombre, String direccion, String direccionfin, double km) {
         this.nombre = nombre;
         this.direccion = direccion;
-        this.direccionfin = drireccionfin;
+        this.direccionfin = direccionfin;
+        this.km = km;
     }
 
     public String getNombre() {
@@ -31,13 +33,16 @@ public abstract class ReservaVehiculos {
     public String getDireccionfin() {
         return direccionfin;
     }
-    
-    
+
+    public double getKm() {
+        return km;
+    }
+      
     public abstract double costocarrera();
 
     @Override
     public String toString() {
-        return String.format("Reserva a nombre de: %s\nDirección de origen: %s\nDirección final: %s\n", nombre, direccion, direccionfin);
+        return String.format("Reserva a nombre de: %s\nDirección de origen: %s\nDirección final: %s\nKm recorridos: %.2f\n", nombre, direccion, direccionfin, km);
     }
     
     

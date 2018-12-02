@@ -10,25 +10,23 @@ package proyectoalquiler.vehiculos;
  * @author leonardo
  */
 public class Taxi extends ReservaVehiculos{
-    private double km;
+   
+    private double costocarreraTaxi = 1.25;
 
-    public Taxi(double km, String nombre, String direccion, String drireccionfin) {
-        super(nombre, direccion, drireccionfin);
-        this.km = km;
+    public Taxi(String nombre, String direccion, String drireccionfin, double km) {
+        super(nombre, direccion, drireccionfin, km);
     }
 
-    
-    public double getKm() {
-        return km;
+    public double getCostocarreraTaxi() {
+        return costocarreraTaxi;
     }
     
+    @Override
     public double costocarrera(){
-        double costocarrera;
-        if (km >= 4) 
-            costocarrera = km*0.30;
+        if (km >= 4)
+         return costocarreraTaxi = km*0.30;
         else
-            costocarrera = 1.25;
-        return costocarrera;
+         return costocarreraTaxi;
     }
     
     @Override

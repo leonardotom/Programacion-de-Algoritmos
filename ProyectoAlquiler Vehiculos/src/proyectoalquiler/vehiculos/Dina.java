@@ -10,24 +10,20 @@ package proyectoalquiler.vehiculos;
  * @author leonardo
  */
 public class Dina extends ReservaVehiculos{
-    private double km;
 
-    public Dina(double km, String nombre, String direccion, String drireccionfin) {
-        super(nombre, direccion, drireccionfin);
-        this.km = km;
-    }
-
-    public double getKm() {
-        return km;
+    private double costocarreraDina = 10.00; 
+    
+    public Dina(String nombre, String direccion, String drireccionfin, double km) {
+        super(nombre, direccion, drireccionfin, km);
     }
     
+    
+    @Override
      public double costocarrera(){
-        double costocarrera;
         if (km >= 4) 
-            costocarrera = km*0.75;
+            return costocarreraDina = km*0.75;
         else
-            costocarrera = 10.00;
-        return costocarrera;
+            return costocarreraDina;
     }
     
     @Override

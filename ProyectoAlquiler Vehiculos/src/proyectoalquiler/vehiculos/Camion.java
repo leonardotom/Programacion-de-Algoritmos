@@ -10,25 +10,20 @@ package proyectoalquiler.vehiculos;
  * @author leonardo
  */
 public class Camion extends ReservaVehiculos{
-    private double km;
 
-    public Camion(double km, String nombre, String direccion, String drireccionfin) {
-        super(nombre, direccion, drireccionfin);
-        this.km = km;
-    }
-
-    public double getKm() {
-        
-        return km;
+    private double costocarreraCamion = 20.00;
+    
+    public Camion(String nombre, String direccion, String drireccionfin, double km) {
+        super(nombre, direccion, drireccionfin, km);
     }
     
+    
+    
      public double costocarrera(){
-        double costocarrera;
         if (km >= 4) 
-            costocarrera = km*1.10;
+            return costocarreraCamion = km*1.10;
         else
-            costocarrera = 20.00;
-        return costocarrera;
+            return costocarreraCamion;
     }
     
     @Override

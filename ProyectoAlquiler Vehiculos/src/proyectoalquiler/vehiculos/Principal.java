@@ -53,7 +53,7 @@ public class Principal {
         System.out.println("Distancia en km de el viaje: ");
         km = entrada.nextDouble();
 
-        Taxi taxi = new Taxi(km, nombre, direccion, direccionfin);
+        Taxi taxi = new Taxi(nombre, direccion, direccionfin,km);
         reservas.add(taxi);
 
         return taxi.costocarrera();
@@ -73,7 +73,7 @@ public class Principal {
         System.out.println("Distancia en km de el viaje: ");
         km = entrada.nextDouble();
 
-        Camioneta camioneta = new Camioneta(km, nombre, direccion, direccionfin);
+        Camioneta camioneta = new Camioneta(nombre, direccion, direccionfin,km);
         reservas.add(camioneta);
 
         return camioneta.costocarrera();
@@ -93,7 +93,7 @@ public class Principal {
         System.out.println("Distancia en km de el viaje: ");
         km = entrada.nextDouble();
 
-        Dina dina = new Dina(km, nombre, direccion, direccionfin);
+        Dina dina = new Dina(nombre, direccion, direccionfin,km);
         reservas.add(dina);
 
         return dina.costocarrera();
@@ -113,7 +113,7 @@ public class Principal {
         System.out.println("Distancia en km de el viaje: ");
         km = entrada.nextDouble();
 
-        Camion camion = new Camion(km, nombre, direccion, direccionfin);
+        Camion camion = new Camion(nombre, direccion, direccionfin,km);
         reservas.add(camion);
 
         return camion.costocarrera();
@@ -138,10 +138,11 @@ public class Principal {
             entrada.nextLine();
             System.out.println("Desea realizar otra reserva: ");
             respuesta = entrada.nextLine();
-            System.out.println("");
-            
+                        
         } while (respuesta.equals("si") || respuesta.equals("SI") || respuesta.equals("Si"));
+        
         mostrarreservas();
+        
         System.out.printf("-----------------------------"
                 + "\nEl total de vehículos alquilados es de: %d\nEl total de ganancias es: %.2f\n", contador,costotal);
     }
